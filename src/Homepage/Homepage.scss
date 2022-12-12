@@ -1,0 +1,29 @@
+.homepage {
+    h1 {
+        font-size: 36px;
+        font-weight: bold;
+        margin: 0;
+        padding: 40px 0 20px;
+        text-align: center;
+    }
+
+    p {
+        font-size: 18px;
+        line-height: 1.5;
+        margin: 0;
+        padding: 0 40px;
+        text-align: center;
+    }
+
+    .image-gallery {
+        display: flex;
+        justify-content: center;
+        margin: 0 -5px;
+
+        img {
+            height: 240px;
+            object-fit: cover;
+            width: 240px;
+        }
+    }
+}

@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import './App.css';
 import Booking from './Bookings/Bookings';
+import Navbar from './Navbar/Navbar';
+import Homepage from './Homepage/Homepage';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 function App() {
   const [selectedDate, setSelectedDate] = useState(null);
@@ -38,14 +41,19 @@ function App() {
   };
 
   return (
-    <div className="App">
-      <Booking
-        appointment={selectedDate}
-        setAppointment={setSelectedDate}
-        book={handleSubmit}
-      />
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <Navbar />
+        <Routes>
+          {/* Wrap your Route components inside a Routes component */}
+          <Route path="/" element={<Homepage />} /> 
+        
+          <Route path="/contact" element={<Booking appointment={selectedDate} setAppointment={setSelectedDate} book={handleSubmit} />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
 export default App;
+
